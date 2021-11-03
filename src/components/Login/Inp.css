@@ -1,0 +1,36 @@
+.dB {
+	padding-top: 8%;
+	padding-left: 2%;
+	padding-right: 2%;
+	border-radius: 2%;
+	color: white;
+	position: absolute;
+	top: 15%;
+	left: 25%;
+	/* padding: 0.5rem; */
+	background-color: #1a2146;
+	width: 50%;
+	height: 70%;
+}
+
+.submit-btn {
+	display: flex;
+	/* background-color: red; */
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+}
+
+@media only screen and (max-width: 726px) {
+	.dB {
+		padding-top: 15%;
+		margin-left: 2%;
+		width: 80%;
+		margin-right: 2%;
+		left: 10%;
+	}
+
+	.submit-btn {
+		padding: 5px;
+	}
+}

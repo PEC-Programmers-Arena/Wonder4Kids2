@@ -1,0 +1,39 @@
+.grid{
+    background-color: #181717;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #333232;
+    color: cornsilk;
+    /* font-color; */
+}
+
+.githubico{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.githubinfo{
+    vertical-align: middle;
+    padding-left: 1vw;
+    /* position: relative; */
+    padding-top: 5px;
+}
+
+.Contacts{
+    padding-top: 5px;
+    padding-bottom: 0px;
+}
+
+a {
+    text-decoration: none !important;
+  }
+
+.groupContacts{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footerIcon{
+    float: left;
+    padding-bottom: 1.5px;
+}
