@@ -14,7 +14,7 @@
 
 .githubinfo{
     vertical-align: middle;
-    padding-left: 1vw;
+    padding-left: 2vw;
     /* position: relative; */
     padding-top: 5px;
 }
@@ -36,4 +36,16 @@ a {
 .footerIcon{
     float: left;
     padding-bottom: 3px;
+}
+
+@media only screen and (min-width: 600px) {
+    .ProjectInfoMobile {
+      display: none;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+.ProjectInfoDesktop {
+    display: none;
+}
 }
