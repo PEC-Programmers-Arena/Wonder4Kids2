@@ -14,7 +14,12 @@ function Footer(){
 		<>
 			<div className="grid">
 				<div class="githubinfo">
+				<span className="ProjectInfoMobile">
+				&nbsp;Want to Contribute? &nbsp;
+				</span>
+				<span className="ProjectInfoDesktop">
 				This is an Open Source Project &nbsp;
+				</span>
 				<span className="githubico">
 				<IconButton color="primary">
 				<a href="https://github.com/PEC-Programmers-Arena/Wonder4Kids2" text-decoration="none"><GitHubIcon fontSize="large" className="footerIcon"/>&nbsp;GitHub</a>
