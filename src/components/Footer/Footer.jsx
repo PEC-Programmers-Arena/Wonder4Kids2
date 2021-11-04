@@ -1,5 +1,5 @@
-import React , {useState} from 'react';
-import { Box, Link, Stack, Text } from '@chakra-ui/react';
+import React from 'react';
+// import { Box, Link, Stack, Text } from '@chakra-ui/react';
 import "./Footer.css";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import IconButton from '@mui/material/IconButton';
