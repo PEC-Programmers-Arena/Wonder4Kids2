@@ -1,9 +1,9 @@
-import React from 'react';
-// import { Box, Link, Stack, Text } from '@chakra-ui/react';
+import React , {useState} from 'react';
+import { Box, Link, Stack, Text } from '@chakra-ui/react';
 import "./Footer.css";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import IconButton from '@mui/material/IconButton';
-// import TabScrollButton from '@mui/material/TabScrollButton';
+import TabScrollButton from '@mui/material/TabScrollButton';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import EmailIcon from '@mui/icons-material/Email';
@@ -14,21 +14,19 @@ function Footer(){
 		<>
 			<div className="grid">
 				<div class="githubinfo">
-                    <center>This is an Open Source Project &nbsp;
-                    <span className="githubico">
-                        <IconButton color="primary">
-                            <a href="https://github.com/PEC-Programmers-Arena/Wonder4Kids" text-decoration="none"><GitHubIcon fontSize="large" className="footerIcon"/>
-                                &nbsp;GitHub
-                            </a>
-                        </IconButton>
-                    </span>
-				</center>
+				This is an Open Source Project &nbsp;
+				<span className="githubico">
+				<IconButton color="primary">
+				<a href="https://github.com/PEC-Programmers-Arena/Wonder4Kids" text-decoration="none"><GitHubIcon fontSize="large" className="footerIcon"/>&nbsp;GitHub</a>
+				</IconButton>
+				</span>
+				{/* </center> */}
 				</div>
 				<div className="Contacts">
 					<center>Contact Us</center>
 				
 					<div className="groupContacts">
-						<IconButton>
+						<IconButton>	
 							<InstagramIcon color="primary" fontSize="large"/>
 						</IconButton>
 						<IconButton>
@@ -50,4 +48,4 @@ function Footer(){
 	)
 };
 
-export default Footer;
+export default Footer
