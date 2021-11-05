@@ -1,5 +1,8 @@
 # Wonder4Kids2
 
+## UI/UX designs
+[Figma link for designs](https://www.figma.com/file/LV55M44WViwE2eZSQIVWyx/Wonder-4-Kids?node-id=0%3A1)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
