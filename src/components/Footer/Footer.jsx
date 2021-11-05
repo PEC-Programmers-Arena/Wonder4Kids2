@@ -13,7 +13,7 @@ function Footer(){
 	return(
 		<>
 			<div className="grid">
-				<div class="githubinfo">
+				<div className="githubinfo">
 				<span className="ProjectInfoMobile">
 				&nbsp;Want to Contribute? &nbsp;
 				</span>
