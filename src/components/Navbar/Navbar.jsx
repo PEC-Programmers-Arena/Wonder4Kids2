@@ -1,57 +1,165 @@
-import React from "react";
-// import {
-//     Container,
-//     Nav,
-//     Navbar,
-//     NavDropdown,
-// } from "react-bootstrap"
+import React, { useState } from "react";
 import {
     AppBar,
+    Avatar,
     Box,
+    Button,
+    Divider,
     IconButton,
+    List,
+    ListItem,
+    ListItemText,
+    SwipeableDrawer,
     Toolbar,
     Typography,
 } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import useWindowDimensions from "../useWindowDimensions";
+import logo from '../../assets/logo-01.svg';
 
-function NavBar() {
+const HorizontalAppBar = () => {
     const bg = "#882093";
 
     return (
-        // <Navbar bg="light" expand="lg">
-        //     <Container>
-        //         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        //         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        //         <Navbar.Collapse id="basic-navbar-nav">
-        //             <Nav className="me-auto">
-        //                 <Nav.Link href="#home">Home</Nav.Link>
-        //                 <Nav.Link href="#link">Link</Nav.Link>
-        //                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-        //                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-        //                     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-        //                     <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-        //                     <NavDropdown.Divider />
-        //                     <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-        //                 </NavDropdown>
-        //             </Nav>
-        //         </Navbar.Collapse>
-        //     </Container>
-        // </Navbar>
-        <Box sx={{ flexGrow: 1 }}>
+        <React.Fragment>
             <AppBar
-                color="transparent"
+                // color="transparent"
                 // color={bg}
+                sx={{ backgroundColor: bg }}
                 enableColorOnDark
             >
                 <Toolbar>
+                    <Avatar 
+                        alt="logo" 
+                        src={logo} 
+                        variant="rounded"
+                    />
                     <Typography
                         component="div"
                         sx={{ flexGrow: 1 }}
                     ></Typography>
-                    <Typography>
-                        hi
-                    </Typography>
+                    <Button color="inherit" sx={{ px: "12px" }}>
+                        Home
+                    </Button>
+                    <Button color="inherit" sx={{ px: "12px" }}>
+                        Learn to Use
+                    </Button>
+                    <Button color="inherit" sx={{ px: "12px" }}>
+                        About Us
+                    </Button>
+                    <Button color="inherit" sx={{ px: "12px" }}>
+                        Contact &amp; Feedback
+                    </Button>
+                    <Button color="inherit" sx={{ px: "12px" }}>
+                        Developer Community
+                    </Button>
                 </Toolbar>
             </AppBar>
+            <Toolbar />
+        </React.Fragment>
+    );
+};
+
+const VerticalDrawer = () => {
+    const bg = "#882093";
+    const drawerBg = "#FFE381";
+    const [drawer, setDrawer] = useState(false);
+
+    return (
+        <React.Fragment>
+            <AppBar 
+                sx={{ backgroundColor: bg }}
+                enableColorOnDark
+            >
+                <Toolbar>
+                    <Avatar 
+                        alt="logo" 
+                        src={logo} 
+                        variant="rounded"
+                    />
+                    <Typography
+                        component="div"
+                        sx={{ flexGrow: 1 }}
+                    ></Typography>
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="menu"
+                        onClick={() => setDrawer(true)}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
+            <Toolbar />
+            <SwipeableDrawer
+                anchor="right"
+                open={drawer}
+                onClose={() => setDrawer(false)}
+                onOpen={() => setDrawer(true)}
+            >
+                <Box
+                    sx={{ 
+                        width: 250, 
+                        backgroundColor: drawerBg,
+                        height: "inherit",
+                    }}
+                    onClick={() => setDrawer(false)}
+                    onKeyDown={() => setDrawer(false)}
+                >
+                    <IconButton
+                        size="large"
+                        edge="start"
+                        color="inherit"
+                        aria-label="close"
+                        onClick={() => setDrawer(false)}
+                        sx={{ m: 1, p: 1 }}
+                    >
+                        <CloseIcon />
+                    </IconButton>
+                    <Divider />
+                    <List>
+                        <ListItem button key={"Home"}>
+                            <ListItemText>
+                                Home
+                            </ListItemText>
+                        </ListItem>
+                        <ListItem button key={"Learn to Use"}>
+                            <ListItemText>
+                                Learn to Use
+                            </ListItemText>
+                        </ListItem>
+                        <ListItem button key={"About Us"}>
+                            <ListItemText>
+                                About Us
+                            </ListItemText>
+                        </ListItem>
+                        <ListItem button key={"Contact & Feedback"}>
+                            <ListItemText>
+                                Contact &amp; Feedback
+                            </ListItemText>
+                        </ListItem>
+                        <ListItem button key={"Developer Community"}>
+                            <ListItemText>
+                                Developer Community
+                            </ListItemText>
+                        </ListItem>
+                    </List>
+                </Box>
+            </SwipeableDrawer>
+        </React.Fragment>
+    );
+};
+
+function NavBar() {
+    // eslint-disable-next-line no-unused-vars
+    const { height, width } = useWindowDimensions();
+
+    return (
+        <Box sx={{ flexGrow: 1 }}>
+            {width >= 783 ? <HorizontalAppBar /> : <VerticalDrawer />}
         </Box>
     );
 };
