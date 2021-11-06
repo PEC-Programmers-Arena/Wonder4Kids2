@@ -16,7 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import useWindowDimensions from "../useWindowDimensions";
-import logo from '../../assets/logo-01.svg';
+// import logo from '../../assets/logo-01.svg';
 
 const HorizontalAppBar = () => {
     const bg = "#882093";
