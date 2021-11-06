@@ -22,7 +22,7 @@ function Footer(){
 				</span>
 				<span className="githubico">
 				<IconButton color="primary">
-				<a href="https://github.com/PEC-Programmers-Arena/Wonder4Kids2" text-decoration="none"><GitHubIcon fontSize="large" className="footerIcon"/>&nbsp;GitHub</a>
+				<a href="https://github.com/PEC-Programmers-Arena/Wonder4Kids2" target="_blank" text-decoration="none"><GitHubIcon fontSize="large" className="footerIcon"/>&nbsp;GitHub</a>
 				</IconButton>
 				</span>
 				{/* </center> */}
