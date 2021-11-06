@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import {
     AppBar,
-    Avatar,
+    // Avatar,
     Box,
     Button,
     Divider,
@@ -30,10 +30,17 @@ const HorizontalAppBar = () => {
                 enableColorOnDark
             >
                 <Toolbar>
-                    <Avatar 
+                    {/* <Avatar 
                         alt="logo" 
                         src={logo} 
                         variant="rounded"
+                        sx={{ width: 56, height: 56 }}
+                    /> */}
+                    <img 
+                        alt="logo"
+                        src={logo}
+                        width={50}
+                        height={50}
                     />
                     <Typography
                         component="div"
@@ -73,10 +80,16 @@ const VerticalDrawer = () => {
                 enableColorOnDark
             >
                 <Toolbar>
-                    <Avatar 
+                    {/* <Avatar 
                         alt="logo" 
                         src={logo} 
                         variant="rounded"
+                    /> */}
+                    <img 
+                        alt="logo"
+                        src={logo}
+                        width={50}
+                        height={50}
                     />
                     <Typography
                         component="div"
