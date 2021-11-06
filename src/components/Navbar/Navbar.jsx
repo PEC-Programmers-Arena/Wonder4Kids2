@@ -16,7 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import useWindowDimensions from "../useWindowDimensions";
-import logo from '../../assets/logo-01.svg';
+// import logo from '../../assets/logo-01.svg';
 
 const HorizontalAppBar = () => {
     const bg = "#882093";
@@ -38,7 +38,8 @@ const HorizontalAppBar = () => {
                     /> */}
                     <img 
                         alt="logo"
-                        src={logo}
+                        src={"https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png"}
+                        // src={logo}
                         width={50}
                         height={50}
                     />
@@ -87,7 +88,8 @@ const VerticalDrawer = () => {
                     /> */}
                     <img 
                         alt="logo"
-                        src={logo}
+                        src={"https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png"}
+                        // src={logo}
                         width={50}
                         height={50}
                     />
