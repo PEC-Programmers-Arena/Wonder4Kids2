@@ -39,7 +39,6 @@ function Footer() {
 				</div>
 				<div className='Contacts'>
 					<center>Contact Us</center>
-
 					<div className='groupContacts'>
 						<IconButton>
 							<InstagramIcon color='primary' fontSize='large' />
