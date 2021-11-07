@@ -16,6 +16,9 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import useWindowDimensions from "../useWindowDimensions";
+import LOGO from '../../assets/un-01.png';
+import { height } from "@mui/system";
+
 // import logo from '../../assets/logo-01.svg';
 
 const HorizontalAppBar = () => {
@@ -42,6 +45,11 @@ const HorizontalAppBar = () => {
                         // src={logo}
                         width={50}
                         height={50}
+                    />
+                    <img
+                        src={LOGO}
+                        alt="Name"
+                        style={{height:"50px"}}
                     />
                     <Typography
                         component="div"
@@ -92,6 +100,12 @@ const VerticalDrawer = () => {
                         // src={logo}
                         width={50}
                         height={50}
+                    />
+
+                    <img
+                        src={LOGO}
+                        alt="Name"
+                        style={{height:"50px", width:"60%"}}
                     />
                     <Typography
                         component="div"
