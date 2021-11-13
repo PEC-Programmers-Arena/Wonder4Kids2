@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import "./Home.css";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
-import Login from "../Login/Login";
 import {
   AppBar,
   Box,
@@ -17,7 +17,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useWindowDimensions from "../useWindowDimensions";
-import LOGO from "../../assets/un-01.png";
+import Login from "../Login/Login";
 
 const HorizontalAppBar = () => {
   const bg = "#882093";
@@ -31,22 +31,6 @@ const HorizontalAppBar = () => {
         enableColorOnDark
       >
         <Toolbar>
-          {/* <Avatar 
-                        alt="logo" 
-                        src={logo} 
-                        variant="rounded"
-                        sx={{ width: 56, height: 56 }}
-                    /> */}
-          <img
-            alt="logo"
-            src={
-              "https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png"
-            }
-            // src={logo}
-            width={50}
-            height={50}
-          />
-          <img src={LOGO} alt="Name" style={{ height: "50px" }} />
           <Typography component="div" sx={{ flexGrow: 1 }}></Typography>
           <Link to="/home">
             <Button color="inherit" sx={{ px: "12px" }}>
@@ -81,9 +65,11 @@ const HorizontalAppBar = () => {
         </Toolbar>
         <Outlet />
       </AppBar>
+
       <Routes>
         <Route path="/login" element={<Login />} />
       </Routes>
+
       <Toolbar />
     </React.Fragment>
   );
@@ -98,22 +84,6 @@ const VerticalDrawer = () => {
     <React.Fragment>
       <AppBar sx={{ backgroundColor: bg }} enableColorOnDark>
         <Toolbar>
-          {/* <Avatar 
-                        alt="logo" 
-                        src={logo} 
-                        variant="rounded"
-                    /> */}
-          <img
-            alt="logo"
-            src={
-              "https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png"
-            }
-            // src={logo}
-            width={50}
-            height={50}
-          />
-
-          <img src={LOGO} alt="Name" style={{ height: "50px", width: "60%" }} />
           <Typography component="div" sx={{ flexGrow: 1 }}></Typography>
           <IconButton
             size="large"
@@ -179,15 +149,16 @@ const VerticalDrawer = () => {
   );
 };
 
-function Navbar() {
-  // eslint-disable-next-line no-unused-vars
+export default function Home() {
   const { height, width } = useWindowDimensions();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      {width >= 783 ? <HorizontalAppBar /> : <VerticalDrawer />}
-    </Box>
+    <div>
+      <div>
+        <Box sx={{ flexGrow: 1 }}>
+          {width >= 783 ? <HorizontalAppBar /> : <VerticalDrawer />}
+        </Box>
+      </div>
+    </div>
   );
 }
-
-export default Navbar;
