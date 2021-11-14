@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Home.css";
 import { Outlet, Link } from "react-router-dom";
 import {
   AppBar,
@@ -16,7 +17,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useWindowDimensions from "../useWindowDimensions";
-import LOGO from "../../assets/un-01.png";
 
 const HorizontalAppBar = () => {
   const bg = "#882093";
@@ -30,23 +30,11 @@ const HorizontalAppBar = () => {
         enableColorOnDark
       >
         <Toolbar>
-          {/* <Avatar 
-                        alt="logo" 
-                        src={logo} 
-                        variant="rounded"
-                        sx={{ width: 56, height: 56 }}
-                    /> */}
-          <img
-            alt="logo"
-            src={
-              "https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png"
-            }
-            // src={logo}
-            width={50}
-            height={50}
-          />
-          <img src={LOGO} alt="Name" style={{ height: "50px" }} />
-          <Typography component="div" sx={{ flexGrow: 1 }}></Typography>
+          <Typography
+            color="white"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          ></Typography>
           <Link to="/">
             <Button color="inherit" sx={{ px: "12px" }}>
               <Typography color="white">Home</Typography>
@@ -54,32 +42,33 @@ const HorizontalAppBar = () => {
           </Link>
           <Link to="/learn-to-use">
             <Button color="inherit" sx={{ px: "12px" }}>
-              <Typography color="white">Learn To Use</Typography>
+            <Typography color="white">Learn To Use</Typography>
             </Button>
           </Link>
           <Link to="/about-us">
             <Button color="inherit" sx={{ px: "12px" }}>
-              <Typography color="white">About Us</Typography>
+            <Typography color="white">About Us</Typography>
             </Button>
           </Link>
           <Link to="/contact-feedback">
             <Button color="inherit" sx={{ px: "12px" }}>
-              <Typography color="white">Contact &amp; Feedback</Typography>
+            <Typography color="white">Contact &amp; Feedback</Typography>
             </Button>
           </Link>
           <Link to="/developer-community">
             <Button color="inherit" sx={{ px: "12px" }}>
-              <Typography color="white">Developer Community</Typography>
+            <Typography color="white">Developer Community</Typography>
             </Button>
           </Link>
           <Link to="/login">
             <Button color="inherit" sx={{ px: "12px" }}>
-              <Typography color="white">Login</Typography>
+            <Typography color="white">Login</Typography>
             </Button>
           </Link>
         </Toolbar>
         <Outlet />
       </AppBar>
+
       <Toolbar />
     </React.Fragment>
   );
@@ -94,22 +83,6 @@ const VerticalDrawer = () => {
     <React.Fragment>
       <AppBar sx={{ backgroundColor: bg }} enableColorOnDark>
         <Toolbar>
-          {/* <Avatar 
-                        alt="logo" 
-                        src={logo} 
-                        variant="rounded"
-                    /> */}
-          <img
-            alt="logo"
-            src={
-              "https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png"
-            }
-            // src={logo}
-            width={50}
-            height={50}
-          />
-
-          <img src={LOGO} alt="Name" style={{ height: "50px", width: "60%" }} />
           <Typography component="div" sx={{ flexGrow: 1 }}></Typography>
           <IconButton
             size="large"
@@ -183,20 +156,52 @@ const VerticalDrawer = () => {
           </List>
         </Box>
       </SwipeableDrawer>
-      <Outlet />
     </React.Fragment>
   );
 };
 
-function Navbar() {
-  // eslint-disable-next-line no-unused-vars
+export default function Home() {
   const { height, width } = useWindowDimensions();
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      {width >= 783 ? <HorizontalAppBar /> : <VerticalDrawer />}
-    </Box>
+    <>
+      <div>
+        <Box sx={{ flexGrow: 1 }}>
+          {width >= 783 ? <HorizontalAppBar /> : <VerticalDrawer />}
+        </Box>
+      </div>
+
+      <div>
+        <div className="flex-one">
+          <div className="flex-items">
+            <img src="https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png" alt="" />
+          </div>
+          <div className="flex-items">
+            <Typography
+              align="center"
+              variant="h2"
+              color="white"
+              style={{ fontFamily: "Risque" }}
+            >
+              Wonder For Kids
+              <div
+                style={{
+                  width: "50vw",
+                  height: "0.5px",
+                  backgroundColor: "white",
+                }}
+              ></div>
+            </Typography>
+            <Typography align="center" variant="h4" color="white">
+              {" "}
+              <br></br>unleash the adventure of learning with us for classes 5
+              and below
+            </Typography>
+          </div>
+        </div>
+        <div className="flex-two"></div>
+        <div className="flex-three"></div>
+      </div>
+    </>
   );
 }
-
-export default Navbar;

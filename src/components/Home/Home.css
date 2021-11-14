@@ -1,0 +1,23 @@
+.flex-one {
+    display: flex;
+    flex: 100%;
+    background-color: #882093;
+    flex-direction: row;
+    padding: 80px;
+}
+
+.flex-items {
+    flex: 50%;
+}
+
+.flex-two {
+    background-color: #E79F28;
+    padding: 120px;
+    flex: 100%;
+}
+
+.flex-three {
+    background-color: #10A1AF;
+    padding: 120px;
+    flex: 100%;
+}
