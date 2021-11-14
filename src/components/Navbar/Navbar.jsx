@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
-import Login from "../Login/Login";
+import { Outlet, Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -48,42 +47,39 @@ const HorizontalAppBar = () => {
           />
           <img src={LOGO} alt="Name" style={{ height: "50px" }} />
           <Typography component="div" sx={{ flexGrow: 1 }}></Typography>
-          <Link to="/home">
+          <Link to="/">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Home
+              <Typography color="white">Home</Typography>
             </Button>
           </Link>
           <Link to="/learn-to-use">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Learn to Use
+              <Typography color="white">Learn To Use</Typography>
             </Button>
           </Link>
           <Link to="/about-us">
             <Button color="inherit" sx={{ px: "12px" }}>
-              About Us
+              <Typography color="white">About Us</Typography>
             </Button>
           </Link>
           <Link to="/contact-feedback">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Contact &amp; Feedback
+              <Typography color="white">Contact &amp; Feedback</Typography>
             </Button>
           </Link>
           <Link to="/developer-community">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Developer Community
+              <Typography color="white">Developer Community</Typography>
             </Button>
           </Link>
           <Link to="/login">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Login
+              <Typography color="white">Login</Typography>
             </Button>
           </Link>
         </Toolbar>
         <Outlet />
       </AppBar>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-      </Routes>
       <Toolbar />
     </React.Fragment>
   );
@@ -155,26 +151,39 @@ const VerticalDrawer = () => {
           <Divider />
           <List>
             <ListItem button key={"Home"}>
-              <ListItemText>Home</ListItemText>
+              <Link to="/">
+                <ListItemText><Typography color="black">Home</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Learn to Use"}>
-              <ListItemText>Learn to Use</ListItemText>
+              <Link to="/learn-to-use">
+                <ListItemText><Typography color="black">Learn To Use</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"About Us"}>
-              <ListItemText>About Us</ListItemText>
+              <Link to="/about-us">
+                <ListItemText><Typography color="black">About Us</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Contact & Feedback"}>
-              <ListItemText>Contact &amp; Feedback</ListItemText>
+              <Link to="/contact-feedback">
+                <ListItemText><Typography color="black">Contact &amp; Feedback</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Developer Community"}>
-              <ListItemText>Developer Community</ListItemText>
+              <Link to="/developer-community">
+                <ListItemText><Typography color="black">Developer Community</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Login"}>
-              <ListItemText>Login</ListItemText>
+              <Link to="/login">
+                <ListItemText><Typography color="black">Login</Typography></ListItemText>
+              </Link>
             </ListItem>
           </List>
         </Box>
       </SwipeableDrawer>
+      <Outlet />
     </React.Fragment>
   );
 };

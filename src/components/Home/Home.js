@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import {
   AppBar,
   Box,
@@ -17,7 +17,6 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import useWindowDimensions from "../useWindowDimensions";
-import Login from "../Login/Login";
 
 const HorizontalAppBar = () => {
   const bg = "#882093";
@@ -31,44 +30,44 @@ const HorizontalAppBar = () => {
         enableColorOnDark
       >
         <Toolbar>
-          <Typography component="div" sx={{ flexGrow: 1 }}></Typography>
-          <Link to="/home">
+          <Typography
+            color="white"
+            component="div"
+            sx={{ flexGrow: 1 }}
+          ></Typography>
+          <Link to="/">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Home
+              <Typography color="white">Home</Typography>
             </Button>
           </Link>
           <Link to="/learn-to-use">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Learn to Use
+            <Typography color="white">Learn To Use</Typography>
             </Button>
           </Link>
           <Link to="/about-us">
             <Button color="inherit" sx={{ px: "12px" }}>
-              About Us
+            <Typography color="white">About Us</Typography>
             </Button>
           </Link>
           <Link to="/contact-feedback">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Contact &amp; Feedback
+            <Typography color="white">Contact &amp; Feedback</Typography>
             </Button>
           </Link>
           <Link to="/developer-community">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Developer Community
+            <Typography color="white">Developer Community</Typography>
             </Button>
           </Link>
           <Link to="/login">
             <Button color="inherit" sx={{ px: "12px" }}>
-              Login
+            <Typography color="white">Login</Typography>
             </Button>
           </Link>
         </Toolbar>
         <Outlet />
       </AppBar>
-
-      <Routes>
-        <Route path="/login" element={<Login />} />
-      </Routes>
 
       <Toolbar />
     </React.Fragment>
@@ -125,22 +124,34 @@ const VerticalDrawer = () => {
           <Divider />
           <List>
             <ListItem button key={"Home"}>
-              <ListItemText>Home</ListItemText>
+              <Link to="/">
+                <ListItemText><Typography color="black">Home</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Learn to Use"}>
-              <ListItemText>Learn to Use</ListItemText>
+              <Link to="/learn-to-use">
+                <ListItemText><Typography color="black">Learn To Use</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"About Us"}>
-              <ListItemText>About Us</ListItemText>
+              <Link to="/about-us">
+                <ListItemText><Typography color="black">About Us</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Contact & Feedback"}>
-              <ListItemText>Contact &amp; Feedback</ListItemText>
+              <Link to="/contact-feedback">
+                <ListItemText><Typography color="black">Contact &amp; Feedback</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Developer Community"}>
-              <ListItemText>Developer Community</ListItemText>
+              <Link to="/developer-community">
+                <ListItemText><Typography color="black">Developer Community</Typography></ListItemText>
+              </Link>
             </ListItem>
             <ListItem button key={"Login"}>
-              <ListItemText>Login</ListItemText>
+              <Link to="/login">
+                <ListItemText><Typography color="black">Login</Typography></ListItemText>
+              </Link>
             </ListItem>
           </List>
         </Box>
@@ -153,12 +164,44 @@ export default function Home() {
   const { height, width } = useWindowDimensions();
 
   return (
-    <div>
+    <>
       <div>
         <Box sx={{ flexGrow: 1 }}>
           {width >= 783 ? <HorizontalAppBar /> : <VerticalDrawer />}
         </Box>
       </div>
-    </div>
+
+      <div>
+        <div className="flex-one">
+          <div className="flex-items">
+            <img src="https://res.cloudinary.com/wonder4kids/image/upload/v1636182194/logo_dhcloy.png" alt="" />
+          </div>
+          <div className="flex-items">
+            <Typography
+              align="center"
+              variant="h2"
+              color="white"
+              style={{ fontFamily: "Risque" }}
+            >
+              Wonder For Kids
+              <div
+                style={{
+                  width: "50vw",
+                  height: "0.5px",
+                  backgroundColor: "white",
+                }}
+              ></div>
+            </Typography>
+            <Typography align="center" variant="h4" color="white">
+              {" "}
+              <br></br>unleash the adventure of learning with us for classes 5
+              and below
+            </Typography>
+          </div>
+        </div>
+        <div className="flex-two"></div>
+        <div className="flex-three"></div>
+      </div>
+    </>
   );
 }
