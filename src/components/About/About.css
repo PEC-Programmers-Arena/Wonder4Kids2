@@ -1,0 +1,95 @@
+*,*::after,*::before{
+    font-size: 1.3rem;
+    box-sizing:border-box;
+    margin: 0;
+}
+
+@media only screen and (max-width:600px) {
+    *{
+        font-size:1.1rem;
+    }
+}
+
+.body{
+    background-color: rgb(229, 229, 253);
+}
+
+.heading{
+    font-size: 3rem;
+    margin: 20px 30vw 20px 30vw;
+    text-align: center;
+}
+@media only screen and (max-width: 550px) {
+    .heading{
+        font-size: 2rem;
+    }
+    
+}
+
+.head{
+    display: inline-flex;
+    padding: 0%;
+}
+#img{
+    margin-top: 5%;
+    width: 40vw;
+    height: 50%;
+    align-items: center;
+}
+@media only screen and (max-width:1700px) {
+    .head{
+        flex-direction: column;
+    }
+    #img{
+        width: 100vw;
+        height:auto;
+    }
+}
+
+
+.para{
+    margin:10%;
+    margin-top: 5%;
+}
+
+.discord,.github{
+
+    max-width: 100%;
+}
+
+
+.column {
+    float: inline-start;
+    width: 25%;
+    padding: 20px;
+    max-width: 98vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Clearfix (clear floats) */
+
+  .row{
+    box-sizing: border-box;
+    margin-right: 0;
+    padding: 0;
+
+  }
+
+  /* .row::after, .row::before {
+    clear: both;
+    display: block;
+  } */
+  
+
+  @media screen and (max-width: 900px) {
+    .column {
+      width: 100vw;
+    }
+    .discord,.github{
+        margin-left:9%;
+        padding: 5px;
+        width:80%
+    }
+  }
+  

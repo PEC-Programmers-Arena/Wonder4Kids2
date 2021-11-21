@@ -194,7 +194,7 @@ function Navbar() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      {width >= 783 ? <HorizontalAppBar /> : <VerticalDrawer />}
+      {width >= 1000 ? <HorizontalAppBar /> : <VerticalDrawer />}
     </Box>
   );
 }
