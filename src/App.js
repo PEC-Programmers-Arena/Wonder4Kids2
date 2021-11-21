@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from "./components/Login/Login";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
+import About from "./components/About/About"
 
 function App() {
   return (
@@ -13,9 +14,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/about-us" element={<About />} />
       </Routes>
-
       <Footer />
+
     </div>
   );
 }
